@@ -8,6 +8,7 @@ import SouthAmericaIcon from '@mui/icons-material/SouthAmerica';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { IconButton } from '@mui/material';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -50,7 +51,7 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-export default function SortBy({data, setData, setPickCountry, down, setCurrentSort,order,setPickRegion}) {
+export default function SortBy({data, setData, setPickCountry, setCurrentSort,setPickRegion, currentSort}) {
   
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -62,26 +63,20 @@ export default function SortBy({data, setData, setPickCountry, down, setCurrentS
   
    const handleClose = (cur) => {
     setCurrentSort(cur);
-    order();
     setAnchorEl(null);
   };
 
   return (
     <div>
-      <Button
-        id="demo-customized-button"
-        aria-controls={open ? 'demo-customized-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        variant="contained"
-        disableElevation
+      <IconButton
+        color="primary"
         onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
       >
-        Sort By
-      </Button>
+        Sort By {currentSort&&currentSort}
+        <KeyboardArrowDownIcon />
+      </IconButton>
       <StyledMenu
-        id="demo-customized-menu"
+     
         MenuListProps={{
           'aria-labelledby': 'demo-customized-button',
         }}
