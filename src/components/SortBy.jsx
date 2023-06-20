@@ -8,7 +8,7 @@ import SouthAmericaIcon from '@mui/icons-material/SouthAmerica';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { IconButton } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -62,9 +62,10 @@ export default function SortBy({data, setData, setPickCountry, setCurrentSort,se
  
   
    const handleClose = (cur) => {
-    setCurrentSort(cur);
     setAnchorEl(null);
   };
+
+  const sort = String(currentSort);
 
   return (
     <div>
@@ -72,7 +73,7 @@ export default function SortBy({data, setData, setPickCountry, setCurrentSort,se
         color="primary"
         onClick={handleClick}
       >
-        Sort By {currentSort&&currentSort}
+        <Typography>Sort By {sort}</Typography>
         <KeyboardArrowDownIcon />
       </IconButton>
       <StyledMenu
@@ -84,15 +85,15 @@ export default function SortBy({data, setData, setPickCountry, setCurrentSort,se
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={()=>(setPickCountry(false),handleClose("Name"),setPickRegion(false))} disableRipple>
+        <MenuItem onClick={()=>(setPickCountry(false),handleClose(),setPickRegion(false),setCurrentSort("Name"))} disableRipple>
           <FontDownloadIcon />
           Name
         </MenuItem>
-        <MenuItem onClick={()=>(handleClose("Region"),setPickCountry(false),setPickRegion(true))} disableRipple>
+        <MenuItem onClick={()=>(handleClose(),setPickCountry(false),setPickRegion(true),setCurrentSort("Region"))} disableRipple>
           <SouthAmericaIcon />
           Region
         </MenuItem>
-        <MenuItem onClick={()=>(handleClose("Area"),setPickCountry(true),setPickRegion(false))} disableRipple>
+        <MenuItem onClick={()=>(handleClose(),setPickCountry(true),setPickRegion(false),setCurrentSort("Area"))} disableRipple>
           <DonutLargeIcon />
           Area
         </MenuItem>

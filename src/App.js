@@ -4,6 +4,7 @@ import "./App.css";
 import {
   Box,
   Button,
+  CircularProgress,
   Container,
   Grid,
   IconButton,
@@ -74,9 +75,9 @@ function App() {
           ...OGData?.filter((c) => c.area === selectedCountry?.value),
           ...OGData?.filter((c) => {
             if (down) {
-              return Number(selectedCountry?.value) > Number(c.area);
+              return Number(selectedCountry?.value) > Number(c?.area);
             } else {
-              return Number(c.area) > Number(selectedCountry?.value);
+              return Number(c?.area) > Number(selectedCountry?.value);
             }
           }).sort((a, b) => {
             return a.area - b.area;
@@ -101,7 +102,7 @@ function App() {
       setData(sortedData);
     };
     const sortRegion = (region) => {
-      setData(OGData?.filter((c) => c.region === region));
+      setData(OGData?.filter((c) => c?.region === region));
     };
     const order = () => {
       switch (currentSort) {
@@ -123,12 +124,12 @@ function App() {
   }, [pickedRegion, pickedCountry, OGData, down, currentSort]);
 
   const handleSearch = (e) => {
-    setSearchInput(e.target.value);
+    setSearchInput(e?.target?.value);
   };
   useEffect(() => {
     setSearchedData(
       data.filter((c) =>
-        c.name.toLowerCase().trim().includes(searchInput.toLowerCase().trim())
+        c?.name?.toLowerCase()?.trim()?.includes(searchInput?.toLowerCase()?.trim())
       )
     );
   }, [searchInput,data]);
@@ -143,6 +144,7 @@ function App() {
     <Container maxWidth="lg" sx={{ my: 2 }}>
       <CssBaseline />
       <NavBar />
+      {loading? <Box width={"100%"} height={"80vh"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}><CircularProgress /></Box>:
       <Grid Container>
         <Grid item container spacing={2} xs={12}>
           <Grid item>
@@ -231,7 +233,7 @@ function App() {
           </Grid>
         </Grid>
         <Grid item container spacing={2} xs={12}>
-          {currentRecords?.length >0? currentRecords.map((c, i) => {
+          {currentRecords?.length >0? currentRecords?.map((c, i) => {
             return (
              
                 <Countries key={i} c={c} />
@@ -254,7 +256,9 @@ function App() {
           />
         </Grid>
       </Grid>
+      }
     </Container>
+      
   );
 }
 
