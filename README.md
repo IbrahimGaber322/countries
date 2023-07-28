@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# My Awesome Country Sorter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to My Awesome Country Sorter! This is a React-based web application that allows you to sort countries based on their size, continent, and alphabetical order in ascending and descending orders. It also includes a search feature to easily find specific countries. The country data is fetched from the countries.api provided by [https://restcountries.com](https://restcountries.com/v2/all?fields=name,region,area).
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Usage](#usage)
+4. [Dependencies](#dependencies)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Acknowledgements](#acknowledgements)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Sorting and organizing country data is essential in various applications. Whether you're building a travel website, a geographical analysis tool, or simply want to explore country data, My Awesome Country Sorter has got you covered. With a user-friendly interface and an easy-to-understand codebase, you can start exploring countries right away.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Sort countries by size, continent, and alphabetical order in ascending and descending orders.
+- Search for specific countries and find them instantly.
+- Beautifully designed using Material-UI components and styled with Emotion CSS-in-JS.
+  
+## Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My Awesome Country Sorter relies on the following packages:
 
-### `npm run build`
+- **@emotion/react**: ^11.11.1
+- **@emotion/styled**: ^11.11.0
+- **@mui/icons-material**: ^5.11.16
+- **@mui/material**: ^5.13.5
+- **@testing-library/jest-dom**: ^5.16.5
+- **@testing-library/react**: ^13.4.0
+- **@testing-library/user-event**: ^13.5.0
+- **axios**: ^1.4.0
+- **react**: ^18.2.0
+- **react-dom**: ^18.2.0
+- **react-scripts**: 5.0.1
+- **react-select**: ^5.7.3
+- **web-vitals**: ^2.1.4
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure to have these packages installed before running the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you find any issues or have suggestions to improve this project, feel free to open an issue or create a pull request. Contributions from the community are highly appreciated!
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project is licensed under the MIT License. You can find the license details in the [LICENSE](LICENSE) file.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Thanks to [restcountries.com](https://restcountries.com) for providing the API to fetch country data.
+- Thanks to the open-source community for their valuable contributions and inspiration.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+Thank you for checking out My Awesome Country Sorter! We hope you find it useful and enjoy exploring countries from around the world. If you have any questions or need further assistance, please don't hesitate to contact us.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy coding!
